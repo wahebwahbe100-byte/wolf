@@ -1,0 +1,83 @@
+/* Aligned service photos and enquiry cards; independent, legible logo assets. */
+.service-layout > .service-intro { max-width:950px; }
+.section.service-detail-section { padding-top:8px; }
+.service-feature {
+  display:grid;
+  grid-template-columns:minmax(0,1fr) 330px;
+  gap:65px;
+  align-items:stretch;
+}
+.service-feature > .detail-photo {
+  position:relative; margin:0; aspect-ratio:auto; min-height:360px;
+}
+.service-feature > .detail-photo > img {
+  position:absolute; inset:0; display:block;
+  width:100%; height:100%; object-fit:cover; object-position:50% 45%;
+}
+.service-feature > .sidebar-cta {
+  display:flex; flex-direction:column; justify-content:center;
+  min-width:0; padding:28px; margin:0; border-radius:6px;
+}
+.service-feature .sidebar-cta > .service-icon {
+  position:static; width:48px; height:48px; flex:0 0 48px;
+  margin:0 0 16px; box-shadow:none;
+}
+.service-feature .sidebar-cta h2 { font-size:25px; line-height:1.22; }
+.service-feature .sidebar-cta p { font-size:13px; line-height:1.65; margin:15px 0 21px; }
+.service-feature .sidebar-cta .button { min-height:46px; padding:12px; line-height:1.35; }
+.service-feature .sidebar-phone { margin-top:18px; }
+.service-content-grid { margin-top:38px; }
+.service-content-grid > .detail-main { min-width:0; }
+
+.brand > .brand-logo {
+  display:block; width:100%; height:auto; max-height:86px; object-fit:contain;
+}
+.wolf-footer .wolf-footer-logo > .brand-logo {
+  display:block; width:100%; height:auto; max-height:100px;
+  object-fit:contain; object-position:left center;
+  filter:brightness(0) invert(1);
+}
+.whatsapp-float {
+  width:56px; height:56px; padding:0; gap:0;
+  border-radius:50%; background:#25d366;
+}
+.whatsapp-float .whatsapp-logo { display:block; width:30px; height:30px; }
+.whatsapp-float:focus-visible { outline:3px solid #0d6437; outline-offset:4px; }
+
+@media(max-width:1150px) {
+  .service-feature { grid-template-columns:minmax(0,1fr) 300px; gap:37px; }
+  .service-feature > .sidebar-cta { padding:24px; }
+  .service-feature .sidebar-cta h2 { font-size:23px; }
+}
+@media(max-width:920px) {
+  .service-feature { grid-template-columns:minmax(0,1fr) 260px; gap:27px; }
+  .service-feature > .sidebar-cta { padding:22px; }
+  .service-feature .sidebar-cta h2 { font-size:22px; }
+}
+@media(max-width:700px) {
+  .section.service-detail-section { padding-top:8px; }
+  .service-feature { grid-template-columns:minmax(0,1fr); gap:22px; }
+  .service-feature > .detail-photo { min-height:0; aspect-ratio:1.65; }
+  .service-feature > .sidebar-cta { padding:25px; }
+  .service-feature .sidebar-cta h2 { font-size:26px; }
+  .service-feature .sidebar-cta p { font-size:14px; }
+  .service-content-grid { margin-top:32px; }
+  .brand > .brand-logo { max-height:66px; }
+  .whatsapp-float { width:50px; height:50px; }
+  .whatsapp-float .whatsapp-logo { width:28px; height:28px; }
+
+  .service-grid.leistungen-grid {
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:14px;
+  }
+  .service-grid.leistungen-grid > .service-card:last-child:nth-child(odd) {
+    grid-column:1 / -1;
+    display:block;
+  }
+
+  /* Only the Natursteinmauern tile fills the empty mobile row on the homepage. */
+  #leistungen .service-grid > .service-card[href="natursteinmauern.html"] {
+    grid-column:1 / -1;
+    width:100%;
+  }
+}
