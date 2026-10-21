@@ -29,14 +29,14 @@
         card.hidden = !visible;
         if (visible) count++;
       });
-      document.querySelectorAll('.filter-status').forEach(status => { status.textContent = `${count} ${status.dataset.resultLabel || "Ergebnisse"} werden angezeigt.`; });
+      document.querySelectorAll('.filter-status').forEach(status => { status.textContent = status.dataset.resultLabel === "Fotos" ? "Fotoauswahl aktualisiert." : `${count} ${status.dataset.resultLabel || "Ergebnisse"} werden angezeigt.`; });
     });
   });
 
   const serviceNames = {
     'abbruch':'Abbruch', 'tiefbau':'Tiefbau', 'baggerfahrer-vermietung':'Baggerfahrer-Vermietung',
     'garten-landschaftsbau':'Garten- und Landschaftsbau', 'wasser-gas-kanal':'Wasser-, Gas- & Kanalanschlüsse',
-    'asphaltarbeiten':'Asphaltarbeiten', 'gruenpflege':'Grünpflege', 'betonarbeiten':'Betonarbeiten', 'natursteinmauern':'Natursteinmauern'
+    'asphaltarbeiten':'Asphaltarbeiten', 'eichenprozessionsspinner':'Eichenprozessionsspinner beseitigen', 'gruenpflege':'Grünpflege', 'betonarbeiten':'Betonarbeiten', 'natursteinmauern':'Natursteinmauern'
   };
   const chosen = new URLSearchParams(window.location.search).get('leistung');
   document.querySelectorAll('[data-contact-form]').forEach(form => {
